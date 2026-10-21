@@ -77,6 +77,11 @@ class ControleRemoto {
                 console.clear();
                 this.ligarDesligar();
                 break;
+            case "sair":
+                console.clear();
+                console.log("\x1b[31mSaindo do programa...\x1b[0m");
+                process.exit(); 
+                break;
             case "+":
                 console.clear();
                 this.aumentarVolume();
@@ -107,5 +112,5 @@ const controle = new ControleRemoto();
 
 while (true) {
     controle.menu();
-    controle.logicaControle(prompt());
+    controle.logicaControle(prompt("Digite um comando (@ para ligar/desligar, sair para encerrar): ").toLowerCase());
 }
